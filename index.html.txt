@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Studio</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 50px; line-height: 1.6; color: #333; }
+        .lang-section { display: none; } /* 默认隐藏所有语言块 */
+        a { color: #007bff; text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <!-- 中文版 (Chinese - zh) -->
+    <div id="zh" class="lang-section">
+        <h1>欢迎来到我的游戏工作室</h1>
+        <p>好玩的游戏正在开发中，敬请期待！</p>
+        <p><a href="privacy-policy-zh.html">隐私政策 (Privacy Policy)</a></p>
+    </div>
+
+    <!-- 英文版 (English - en / Default) -->
+    <div id="en" class="lang-section">
+        <h1>Welcome to My Game Studio</h1>
+        <p>Exciting games are under development. Stay tuned!</p>
+        <p><a href="privacy-policy-en.html">Privacy Policy</a></p>
+    </div>
+
+    <!-- 韩文版 (Korean - ko) -->
+    <div id="ko" class="lang-section">
+        <h1>제 게임 스튜디오에 오신 것을 환영합니다</h1>
+        <p>재미있는 게임이 개발 중입니다. 기대해 주세요!</p>
+        <p><a href="privacy-policy-ko.html">개인정보 처리방침</a></p>
+    </div>
+
+    <!-- 日文版 (Japanese - ja) -->
+    <div id="ja" class="lang-section">
+        <h1>私のゲームスタジオへようこそ</h1>
+        <p>楽しいゲームを開発中です。お楽しみに！</p>
+        <p><a href="privacy-policy-ja.html">プライバシーポリシー</a></p>
+    </div>
+
+    <!-- 泰文版 (Thai - th) -->
+    <div id="th" class="lang-section">
+        <h1>ยินดีต้อนรับสู่สตูดิโอเกมของฉัน</h1>
+        <p>เกมที่น่าตื่นเต้นกำลังอยู่ในการพัฒนา โปรดติดตามชม!</p>
+        <p><a href="privacy-policy-th.html">นโยบายความเป็นส่วนตัว</a></p>
+    </div>
+
+    <script>
+        // 获取浏览器语言代码 (例如: "zh-CN", "en-US", "th-TH")
+        const userLang = navigator.language || navigator.userLanguage; 
+        const langCode = userLang.substring(0, 2).toLowerCase(); 
+
+        // 检查页面中是否存在对应语言的 ID
+        const targetDiv = document.getElementById(langCode);
+
+        if (targetDiv) {
+            targetDiv.style.display = 'block';
+        } else {
+            // 如果不支持该语言，默认显示英文
+            document.getElementById('en').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
